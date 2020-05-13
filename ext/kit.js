@@ -141,7 +141,7 @@ function launcher(message, callback) {
  */
 function binaural(dir) {
   // Check Binary
-  return binary.sync(dir);
+  return binary.isBinaryFileSync(dir);
 }
 
 /**
