@@ -1,0 +1,24 @@
+{
+  "name": "@scaff/vue-cli-preset",
+  "version": "1.0.0",
+  "description": "preset for vue-scaff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.yintech.net:archive/preset.git"
+  },
+  "author": "joenix",
+  "license": "MIT",
+  "dependencies": {
+    "download-git-repo": "^3.0.2",
+    "glob": "^7.1.6",
+    "isbinaryfile": "^3.0.3",
+    "ora": "^4.0.4",
+    "rimraf": "^3.0.2",
+    "strip-json-comments": "^3.1.0",
+    "user-home": "^2.0.0"
+  }
+}

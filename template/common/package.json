@@ -1,0 +1,40 @@
+{
+  "name": "@scaff/vue-cli-template",
+  "version": "5.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --mode=development",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "@scaff/vue-cli-scaff": "^5.1.8",
+    "core-js": "^3.3.2",
+    "register-service-worker": "^1.6.2",
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-e2e-cypress": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-pwa": "^4.0.0",
+    "@vue/cli-plugin-unit-jest": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-prettier": "^5.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^5.0.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "prettier": "^1.18.2",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "style-resources-loader": "^1.3.2",
+    "vue-cli-plugin-scaff": "^5.1.4",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
