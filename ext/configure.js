@@ -1,8 +1,8 @@
 module.exports = {
-	// Repo
+  // Repo
   git: `vue-scaff/vue-cli-template`,
-	// Gener
+  // Gener
   common: `./template/common`,
-	// Tmp
+  // Tmp
   sniper: `.vue-scaff/templates`,
 };
