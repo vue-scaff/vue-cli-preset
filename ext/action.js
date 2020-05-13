@@ -1,6 +1,6 @@
 // Use Kit
 const {
-	foreach,
+  foreach,
   resolve,
   read,
   base,
@@ -48,8 +48,7 @@ async function pathers({ template }, { git, common, sniper }) {
 async function migrate(files, pre, json = {}) {
   // Transfer Files
   foreach(files, (name) => (json[`./${name}`] = `${pre}/${name}`));
-console.log(999999, files);
-console.log(444444, json);
+
   // Return
   return await json;
 }
@@ -62,12 +61,10 @@ console.log(444444, json);
  * ======== ======== ========
  */
 async function clone(repo, local, next) {
-	console.log(112233, repo, local);
   // Use Download
   download(repo, local, { clone: true }, (e) => {
     // Error Hand
     if (e) {
-			console.log(repo, 'error !!!!!!!!!!!!!!');
       return console.error(e);
     }
 
