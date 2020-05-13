@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.yintech.net:archive/preset.git"
+    "url": "https://github.com/vue-scaff/vue-cli-preset"
   },
   "author": "joenix",
   "license": "MIT",
