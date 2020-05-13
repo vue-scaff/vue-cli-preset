@@ -14,7 +14,7 @@ module.exports = (api, options, rootOptions) => {
 
   // Render Template
   api.render(async function (files) {
-    // Clean Files
+    // Clean Files Cache
     clean(files);
 
     // Get Pathers
@@ -42,7 +42,7 @@ module.exports = (api, options, rootOptions) => {
   api.render(
     // Collections
     migrate([
-      "readme.md",
+      "README.md",
       ".browserslistrc",
       ".eslintrc.js",
       ".gitignore",

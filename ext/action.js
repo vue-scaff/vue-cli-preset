@@ -61,15 +61,18 @@ async function migrate(files, pre, json = {}) {
  * ======== ======== ========
  */
 async function clone(repo, local, next) {
-  // Use Download
-  download(repo, local, { clone: true }, (e) => {
-    // Next
-    next();
+  // Use Promise
+  await new Promise((resolve, reject) => {
+    // Use Download
+    download(repo, local, { clone: true }, (e) => {
+      // Error Hand
+      if (e) {
+        return reject(e);
+      }
 
-    // Error Hand
-    if (e) {
-      return console.error(e);
-    }
+      // Next
+      resolve(next());
+    });
   });
 }
 

@@ -63,7 +63,7 @@ function join(dir, pre = home) {
  * @param file {string}
  * ======== ======== ========
  */
-function read(file, encode = "utf-8") {
+function read(file, encode) {
   // Read Sync
   return fs.readFileSync(file, encode);
 }
@@ -87,7 +87,10 @@ function base(file) {
  */
 function clean(files) {
   // Foreach
-  foreach(files, (name) => delete files[name]);
+  foreach(files, (file, name) => {
+    // Delete File
+    delete files[name];
+  });
 }
 
 /**
@@ -152,15 +155,14 @@ function binaural(dir) {
  * ======== ======== ========
  */
 function stuff(dir, callback) {
-  // Use Glob
-  glob
-    // Check Directory
-    .sync("**/*", {
-      cwd: dir,
-      nodir: true,
-    })
-    // Mapping Raw
-    .forEach((raw) => callback(raw));
+  // Set Club
+  const club = glob.sync("**/*", {
+    cwd: dir,
+    nodir: true,
+  });
+
+  // Use Club
+  club.forEach((raw) => callback(raw));
 }
 
 // Export
