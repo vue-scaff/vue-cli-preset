@@ -17,7 +17,7 @@
     "glob": "^7.1.6",
     "isbinaryfile": "^3.0.3",
     "ora": "^4.0.4",
-    "rimraf": "^3.0.2",
+    "rimraf": "^2.6.2",
     "strip-json-comments": "^3.1.0",
     "user-home": "^2.0.0"
   }
