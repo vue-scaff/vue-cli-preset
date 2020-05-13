@@ -2,7 +2,7 @@
 const { configure, dependency, library, kit, action } = require("./ext");
 
 // Use Kit
-const { clean, launcher, remove } = kit;
+const { verify, clean, launcher, remove } = kit;
 
 // Use Action
 const { pathers, migrate, clone, generate } = action;
