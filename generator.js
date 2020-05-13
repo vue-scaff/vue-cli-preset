@@ -23,7 +23,9 @@ module.exports = (api, options, rootOptions) => {
     // Launcher of Start
     launcher("fetching remote template ...", async (next) => {
       // Remove Template Cache
-      remove(tmp);
+      if (verify(tmp)) {
+        remove(tmp);
+      }
 
       // Clone Repo
       await clone(repo, tmp, next);
