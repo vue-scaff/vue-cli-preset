@@ -63,13 +63,13 @@ async function migrate(files, pre, json = {}) {
 async function clone(repo, local, next) {
   // Use Download
   download(repo, local, { clone: true }, (e) => {
+    // Next
+    next();
+
     // Error Hand
     if (e) {
       return console.error(e);
     }
-
-    // Next
-    next();
   });
 }
 
