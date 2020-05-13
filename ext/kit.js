@@ -65,7 +65,7 @@ function join(dir, pre = home) {
  */
 function read(file, encode) {
   // Read Sync
-  return fs.readFileSync(file, encode);
+  return encode ? fs.readFileSync(file, "utf-8") : fs.readFileSync(file);
 }
 
 /**
@@ -133,7 +133,7 @@ function launcher(message, callback) {
   spinner.start();
 
   // Runner
-  callback(() => spinner.stop());
+  return callback(() => spinner.stop());
 }
 
 /**

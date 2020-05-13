@@ -5,7 +5,7 @@ module.exports = [
     message: "please select a template: ",
     choices: [
       {
-        name: "default",
+        name: "vue-scaff-template",
         value: "template"
       }
     ],

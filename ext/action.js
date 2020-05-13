@@ -65,13 +65,16 @@ async function clone(repo, local, next) {
   await new Promise((resolve, reject) => {
     // Use Download
     download(repo, local, { clone: true }, (e) => {
+      // Spinner Stop
+      next();
+
       // Error Hand
       if (e) {
         return reject(e);
       }
 
-      // Next
-      resolve(next());
+      // Resolve
+      resolve();
     });
   });
 }
@@ -95,7 +98,7 @@ async function glitter({ dir, dip }, callback) {
     };
 
     // Each Runner
-    callback(read(pathy.source), pathy);
+    callback(read(pathy.source, true), pathy);
   });
 }
 
@@ -109,7 +112,7 @@ async function glitter({ dir, dip }, callback) {
  */
 async function generate(files, pathy, options) {
   // Use Glitter
-  glitter(pathy, (content, { source, filename }) => {
+  await glitter(pathy, (content, { source, filename }) => {
     // Check Binary
     if (binaural(source)) {
       // Set Binary to Files

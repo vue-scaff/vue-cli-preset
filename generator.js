@@ -33,23 +33,30 @@ module.exports = (api, options, rootOptions) => {
       // Inject `tmp` into `files`
       await generate(files, { dir: tmp, dip: "" });
 
+      var a = [];
+      Object.keys(files).forEach((name) => {
+        a.push(name);
+      });
+      console.log("33333", a);
+
       // Inject `gener` into `files`
-      await generate(files, { dir: gener, dip: "" });
+      // await generate(files, { dir: gener, dip: "" });
+      // console.log(222, files);
     });
   });
 
-  // Supplement Files
-  api.render(
-    // Collections
-    migrate([
-      "README.md",
-      ".browserslistrc",
-      ".eslintrc.js",
-      ".gitignore",
-      "injection.json",
-      "jest.config.js",
-      "postcss.config.js",
-      "vue.config.js",
-    ])
-  );
+  // // Supplement Files
+  // api.render(
+  //   // Collections
+  //   migrate([
+  //     "README.md",
+  //     ".browserslistrc",
+  //     ".eslintrc.js",
+  //     ".gitignore",
+  //     "injection.json",
+  //     "jest.config.js",
+  //     "postcss.config.js",
+  //     "vue.config.js",
+  //   ], gener)
+  // );
 };
