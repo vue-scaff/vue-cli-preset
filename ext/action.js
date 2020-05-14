@@ -21,8 +21,8 @@ const {
  * ======== ======== ========
  */
 async function pathers({ template }, { git, common, sniper }) {
-  // Git Repo -- `direct:https://github.com/vue-scaff/vue-cli-preset/`
-  const repo = git;
+  // Git Repo -- `vue-scaff/vue-cli-preset`
+	const repo = `direct:https://github.com/${git}.git`
 
   // Template Common in Preset
   const gener = resolve(common);
