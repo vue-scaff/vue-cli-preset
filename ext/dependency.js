@@ -10,7 +10,7 @@ const dependencies = {
   // Core
   "core-js": "^3.3.2",
   // Service Worker
-  "register-service-worker": "^1.6.2",
+  "register-service-worker": "^1.6.2"
 };
 
 // Dev Mode

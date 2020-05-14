@@ -8,9 +8,9 @@ const {
   clean,
   verify,
   remove,
-  launcher,
   binaural,
   stuff,
+  ora,
   download,
 } = require("./kit");
 
@@ -45,12 +45,30 @@ async function pathers({ template }, { git, common, sniper }) {
  * @param pre {string}
  * ======== ======== ========
  */
-async function migrate(files, pre, json = {}) {
-  // Transfer Files
-  foreach(files, (name) => (json[`./${name}`] = `${pre}/${name}`));
+async function migrate(files, names, common) {
+  // Read Files
+  foreach(names, (dir, name) => {
+		// Read File
+		files[name] = read(dir);
+	});
+}
+
+/**
+ * Launcher
+ * ======== ======== ========
+ * @param message {string}
+ * @param callback {function}
+ * ======== ======== ========
+ */
+async function launcher(message) {
+  // Set Instant
+  const spinner = ora(message);
+
+  // Start
+  spinner.start();
 
   // Return
-  return await json;
+  return spinner;
 }
 
 /**
@@ -145,6 +163,7 @@ async function generate(files, pathy, options) {
 module.exports = {
   pathers,
   migrate,
+  launcher,
   clone,
   glitter,
   generate,

@@ -2,10 +2,10 @@
 const { configure, dependency, library, kit, action } = require("./ext");
 
 // Use Kit
-const { verify, clean, launcher, remove } = kit;
+const { resolve, verify, clean, remove } = kit;
 
 // Use Action
-const { pathers, migrate, clone, generate } = action;
+const { pathers, migrate, launcher, clone, generate } = action;
 
 // Exports
 module.exports = (api, options, rootOptions) => {
@@ -21,42 +21,20 @@ module.exports = (api, options, rootOptions) => {
     const { repo, gener, tmp } = await pathers(options, configure);
 
     // Launcher of Start
-    launcher("fetching remote template ...", async (next) => {
-      // Remove Template Cache
-      if (verify(tmp)) {
-        remove(tmp);
-      }
+    const spinner = await launcher("fetching remote template ...");
 
-      // Clone Repo
-      await clone(repo, tmp, next);
+    // Remove Template Cache
+    if (verify(tmp)) {
+      remove(tmp);
+    }
 
-      // Inject `tmp` into `files`
-      await generate(files, { dir: tmp, dip: "" });
+    // Clone Repo
+    await clone(repo, tmp, () => spinner.stop());
 
-      var a = [];
-      Object.keys(files).forEach((name) => {
-        a.push(name);
-      });
-      console.log("33333", a);
+    // Inject `tmp` into `files`
+    await generate(files, { dir: tmp, dip: "" });
 
-      // Inject `gener` into `files`
-      // await generate(files, { dir: gener, dip: "" });
-      // console.log(222, files);
-    });
+    // Inject `gener` into `files`
+    await generate(files, { dir: gener, dip: "" });
   });
-
-  // // Supplement Files
-  // api.render(
-  //   // Collections
-  //   migrate([
-  //     "README.md",
-  //     ".browserslistrc",
-  //     ".eslintrc.js",
-  //     ".gitignore",
-  //     "injection.json",
-  //     "jest.config.js",
-  //     "postcss.config.js",
-  //     "vue.config.js",
-  //   ], gener)
-  // );
 };

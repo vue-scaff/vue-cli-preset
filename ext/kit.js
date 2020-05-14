@@ -119,24 +119,6 @@ function remove(dir) {
 }
 
 /**
- * Launcher
- * ======== ======== ========
- * @param message {string}
- * @param callback {function}
- * ======== ======== ========
- */
-function launcher(message, callback) {
-  // Set Instant
-  const spinner = ora(message);
-
-  // Start
-  spinner.start();
-
-  // Runner
-  return callback(() => spinner.stop());
-}
-
-/**
  * Binaural
  * ======== ======== ========
  * @param dir {string}
@@ -175,8 +157,8 @@ module.exports = {
   clean,
   verify,
   remove,
-  launcher,
   binaural,
   stuff,
+	ora,
   download,
 };
