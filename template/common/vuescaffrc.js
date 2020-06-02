@@ -37,6 +37,11 @@ module.exports = {
       suffix: /.vue$/
     },
 
+    filter: {
+      context: `@/filters`,
+      suffix: /.js$/
+    },
+
     style: {
       context: `@/sheet`,
       suffix: /variables.scss$/
