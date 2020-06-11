@@ -1,6 +1,6 @@
 // Script
 const scripts = {
-  serve: "vue-cli-service serve --mode=development",
+  serve: "vue-cli-service serve --mode=development"
 };
 
 // Runtime
@@ -13,12 +13,30 @@ const dependencies = {
   "register-service-worker": "^1.6.2"
 };
 
-// Dev Mode
+// Development
 const devDependencies = {};
 
 // Export
-module.exports = {
-  scripts,
-  dependencies,
-  devDependencies,
+module.exports = template => {
+  // Result
+  return {
+    // Origin Template
+    template: { scripts, dependencies, devDependencies },
+    // Admin Template
+    admin: {
+      scripts,
+      dependencies: Object.assign(dependencies, {
+        clipboard: "^2.0.6",
+        deepmerge: "^4.2.2",
+        echarts: "^4.8.0",
+        screenfull: "^5.0.2",
+        "driver.js": "^0.9.8",
+        "element-ui": "^2.13.2",
+        "fuse.js": "^6.0.1",
+        "js-cookie": "^2.2.1",
+        "vue-count-to": "^1.0.13"
+      }),
+      devDependencies
+    }
+  }[template];
 };

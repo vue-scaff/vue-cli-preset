@@ -9,9 +9,9 @@ const kit = require("./kit");
 const action = require("./action");
 
 module.exports = {
-	configure,
+  configure,
   dependency,
   library,
   kit,
-  action,
+  action
 };

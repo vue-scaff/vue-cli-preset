@@ -7,6 +7,10 @@ module.exports = [
       {
         name: "vue-scaff-template",
         value: "template"
+      },
+      {
+        name: "vue-scaff-admin",
+        value: "admin"
       }
     ],
     default: "None"

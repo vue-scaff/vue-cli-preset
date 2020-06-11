@@ -11,7 +11,7 @@ const {
   binaural,
   stuff,
   ora,
-  download,
+  download
 } = require("./kit");
 
 /**
@@ -22,7 +22,7 @@ const {
  */
 async function pathers({ template }, { git, common, sniper }) {
   // Git Repo -- `vue-scaff/vue-cli-preset`
-	const repo = `direct:https://github.com/${git}.git`
+  const repo = `direct:https://github.com/${git}.git`;
 
   // Template Common in Preset
   const gener = resolve(common);
@@ -34,7 +34,7 @@ async function pathers({ template }, { git, common, sniper }) {
   return {
     repo,
     gener,
-    tmp,
+    tmp
   };
 }
 
@@ -48,9 +48,9 @@ async function pathers({ template }, { git, common, sniper }) {
 async function migrate(files, names, common) {
   // Read Files
   foreach(names, (dir, name) => {
-		// Read File
-		files[name] = read(dir);
-	});
+    // Read File
+    files[name] = read(dir);
+  });
 }
 
 /**
@@ -82,7 +82,7 @@ async function clone(repo, local, next) {
   // Use Promise
   await new Promise((resolve, reject) => {
     // Use Download
-    download(repo, local, { clone: true }, (e) => {
+    download(repo, local, { clone: true }, e => {
       // Spinner Stop
       next();
 
@@ -106,13 +106,13 @@ async function clone(repo, local, next) {
  */
 async function glitter({ dir, dip }, callback) {
   // Use Stuff
-  stuff(dir, (raw) => {
+  stuff(dir, raw => {
     // Set Path
     const pathy = {
       // Source
       source: resolve(raw, dir),
       // File
-      filename: join(raw, dip),
+      filename: join(raw, dip)
     };
 
     // Each Runner
@@ -166,5 +166,5 @@ module.exports = {
   launcher,
   clone,
   glitter,
-  generate,
+  generate
 };

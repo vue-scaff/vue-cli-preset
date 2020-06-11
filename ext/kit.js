@@ -8,7 +8,7 @@ const {
   ora,
   download,
   home,
-  root,
+  root
 } = require("./library");
 
 /**
@@ -32,7 +32,7 @@ function foreach(source, callback = () => {}) {
     return source.map((value, index) => callback(value, index));
   }
   // Any (Json)
-  return Object.keys(source).map((key) => callback(source[key], key));
+  return Object.keys(source).map(key => callback(source[key], key));
 }
 
 /**
@@ -140,11 +140,11 @@ function stuff(dir, callback) {
   // Set Club
   const club = glob.sync("**/*", {
     cwd: dir,
-    nodir: true,
+    nodir: true
   });
 
   // Use Club
-  club.forEach((raw) => callback(raw));
+  club.forEach(raw => callback(raw));
 }
 
 // Export
@@ -159,6 +159,6 @@ module.exports = {
   remove,
   binaural,
   stuff,
-	ora,
-  download,
+  ora,
+  download
 };

@@ -10,15 +10,18 @@ const { pathers, migrate, launcher, clone, generate } = action;
 // Exports
 module.exports = (api, options, rootOptions) => {
   // Preparations
-  api.extendPackage((pkg) => dependency);
+  api.extendPackage(pkg => dependency(options.template));
 
   // Render Template
-  api.render(async function (files) {
+  api.render(async function(files) {
     // Clean Files Cache
     clean(files);
 
     // Get Pathers
-    const { repo, gener, tmp } = await pathers(options, configure);
+    const { repo, gener, tmp } = await pathers(
+      options,
+      configure(options.template)
+    );
 
     // Launcher of Start
     const spinner = await launcher("fetching remote template ...");

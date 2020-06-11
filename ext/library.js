@@ -35,5 +35,5 @@ module.exports = {
   ora,
   download,
   home,
-  root,
+  root
 };

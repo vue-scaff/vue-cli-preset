@@ -1,5 +1,5 @@
 {
+  "title": "Vue Scaff",
   "version": "1.2.3.4",
-  "publicPath": "{{ NODE_ENV }} === 'development' ? '/' : '/vue-scaff'",
-  "test": true
+  "publicPath": "{{ NODE_ENV }} === 'development' ? '/' : '/vue-scaff'"
 }
