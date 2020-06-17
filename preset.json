@@ -41,7 +41,7 @@
       "version": "^1.19.1"
     },
     "vue-cli-plugin-scaff": {
-      "version": "^5.2.0"
+      "version": "^5.2.8"
     },
     "vue-template-compiler": {
       "version": "^2.6.11"

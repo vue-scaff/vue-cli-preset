@@ -8,6 +8,10 @@ module.exports = {
     app: `/App.vue`
   },
 
+  mock: true,
+
+  px2rem: 10,
+
   registry: {
     host: true,
     api: true,
@@ -19,6 +23,11 @@ module.exports = {
   extract: {
     util: {
       context: `@/utils`,
+      suffix: /.js$/
+    },
+
+    filter: {
+      context: `@/filters`,
       suffix: /.js$/
     },
 
@@ -35,11 +44,6 @@ module.exports = {
     component: {
       context: `@/components`,
       suffix: /.vue$/
-    },
-
-    filter: {
-      context: `@/filters`,
-      suffix: /.js$/
     },
 
     style: {
