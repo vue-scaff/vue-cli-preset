@@ -6,7 +6,7 @@ const scripts = {
 // Runtime
 const dependencies = {
   // Scaff
-  "@scaff/vue-cli-scaff": "^5.1.8",
+  "@scaff/vue-cli-scaff": "^5.2.10",
   // Core
   "core-js": "^3.3.2",
   // Service Worker
